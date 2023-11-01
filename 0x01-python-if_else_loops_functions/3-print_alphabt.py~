@@ -1,0 +1,6 @@
+#!/USR/BIN/PYTHON3
+
+FOR I IN RANGE(97, 123):
+    IF CHR(I) == 'Q' OR CHR(I) == 'E':
+        CONTINUE
+    PRINT("{}".FORMAT(CHR(I)), END='')
