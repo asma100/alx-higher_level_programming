@@ -5,6 +5,5 @@ for i in range(122, 96, -1):
     output += chr(i)
   else:
     output += chr(i-32)
-
-print(output)
-
+format_string = "{0}"
+print(format_string.format(output))
