@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 
-n = random.randint(-10, 10)
+n = random.randint(-100, 100)
 
 if n > 0:
   print(f"{n} is positive.")
