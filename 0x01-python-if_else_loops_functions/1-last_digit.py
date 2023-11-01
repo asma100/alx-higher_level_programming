@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-nnumber = abs(number)  
-last = nnumber % 10  
+
+if number < 0:
+    nnumber = abs(number)
+    last = nnumber % 10 
+    last = -last  # Negate the last digit if the original number is negative
+else:
+    last = number % 10
 
 if last > 5:
     print(f"Last digit of {number} is {last} and is greater than 5")
