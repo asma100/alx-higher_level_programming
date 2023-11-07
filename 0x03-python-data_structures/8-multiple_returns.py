@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-     if len(sentence) == 0:
-        first_char = None
-     else:
-        length = len(sentence)
-        first = sentence[0]
+    if len(sentence) == 0:
+        f = None
+    else:
+        le = len(sentence)
+        f = sentence[0]
 
-     return length, first
+    return le, f
