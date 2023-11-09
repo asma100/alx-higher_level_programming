@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+def square_matrix_simple(matrix=[]):
+    for r in matrix:
+        for i in range(len(r)):
+           r[i] = r[i] * r[i]
