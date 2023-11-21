@@ -1,7 +1,7 @@
 #!/usr/bin/python3
     
        
-    def list_division(my_l_1, my_l_2, list_length):
+def list_division(my_l_1, my_l_2, list_length):
     x = []
 
     for i in range(list_length):
@@ -18,5 +18,5 @@
             div_re = 0
         finally:
             x.append(div_re)
-
-    return x
+            
+            return x
