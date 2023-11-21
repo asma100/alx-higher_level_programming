@@ -1,22 +1,20 @@
 #!/usr/bin/python3    
-def list_division(my_list_1=[], my_list_2=[], list_length=0):
+def list_division(my_list_1, my_list_2, list_length):
     result = []
-
     for i in range(list_length):
         try:
-            # Attempt division and append the result
-            result.append(my_list_1[i] / my_list_2[i])
+            quotient = 0
+            if i < len(my_list_1) and i < len(my_list_2):
+                if isinstance(my_list_1[i], (int, float)) and isinstance(my_list_2[i], (int, float)):
+                    if my_list_2[i] != 0:
+                        quotient = my_list_1[i] / my_list_2[i]
+                    else:
+                        print("division by 0")
+                else:
+                    print("wrong type")
+            else:
+                print("out of range")
+            result.append(quotient)
         except ZeroDivisionError:
-            # Handle division by zero
-            print("division by 0")
-            result.append("division by 0")
-        except TypeError:
-            # Handle non-numeric types
-            print("wrong type")
-            result.append("wrong type")
-        except IndexError:
-            # Handle out-of-range access
-            print("out of range")
-            result.append("out of range")
-
+            result.append(0)
     return result
