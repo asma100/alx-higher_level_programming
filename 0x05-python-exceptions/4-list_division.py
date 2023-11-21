@@ -1,8 +1,7 @@
 #!/usr/bin/python3
     
-       
 def list_division(my_list_1, my_list_2, list_length):
-    result = []
+    X = []
     for i in range(list_length):
         try:
             quotient = 0
@@ -16,7 +15,7 @@ def list_division(my_list_1, my_list_2, list_length):
                     print("wrong type")
             else:
                 print("out of range")
-            result.append(quotient)
+            X.append(quotient)
         except ZeroDivisionError:
-            result.append(0)
-    return result
+            X.append(0)
+    return X
