@@ -2,11 +2,11 @@
 import sys
 
 def is_valid(board, row, col):
-    # Check if there is a queen in the same column
+
     for i in range(row):
         if board[i] == col:
             return False
-    # Check if there is a queen in the same diagonal
+
     for i, j in zip(range(row-1, -1, -1), range(col-1, -1, -1)):
         if board[i] == j:
             return False
@@ -17,7 +17,7 @@ def is_valid(board, row, col):
 
 def solve(board, row):
     if row == len(board):
-        print(" ".join(str(col+1) for col in board))
+        print(board)
     else:
         for col in range(len(board)):
             if is_valid(board, row, col):
