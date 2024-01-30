@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+""" rectangle  """
+
 
 class Rectangle:
     """
-    Defines a rectangle.
+    empty
     """
-
     def __init__(self, width=0, height=0):
         """
-        Initializes a new Rectangle object.
+        Creates a new Rectangle object with specified width and height.
 
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
@@ -17,16 +18,16 @@ class Rectangle:
             TypeError: If either width or height is not an integer.
             ValueError: If either width or height is less than 0.
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
         """
-        Retrieves the width of the rectangle.
+        Returns the current width of the rectangle.
 
         Returns:
-            int: The width of the rectangle.
+            int: The rectangle's width.
         """
         return self.__width
 
@@ -51,10 +52,10 @@ class Rectangle:
     @property
     def height(self):
         """
-        Retrieves the height of the rectangle.
+        Returns the current height of the rectangle.
 
         Returns:
-            int: The height of the rectangle.
+            int: The rectangle's height.
         """
         return self.__height
 
