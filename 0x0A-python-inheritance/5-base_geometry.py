@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """module my list """
-class BaseGeometry : 
+
+
+class BaseGeometry:
     """nothing"""
     pass
