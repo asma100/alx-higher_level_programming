@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """module lookup"""
+
+
 def lookup(obj):
     """
     obj: input  obj
