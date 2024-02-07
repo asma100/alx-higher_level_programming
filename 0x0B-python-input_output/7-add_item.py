@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-adding items 
+adding items
 """
 import sys
 from 5-save_to_json_file import save_to_json_file
