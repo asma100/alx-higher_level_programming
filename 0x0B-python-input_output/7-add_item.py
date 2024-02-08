@@ -9,7 +9,15 @@ from 6-load_from_json_file import load_from_json_file
 
 
 def add_items_to_file(items):
-    """Adds items , creat file"""
+"""
+    Adds items to a JSON file, creating the file if it doesn't exist.
+
+    Args:
+        items: A list of items to add to the file.
+
+    Raises:
+        ValueError: If the loaded JSON data is invalid.
+    """
     filename = "add_item.json"
     try:
         my_list = load_from_json_file(filename)
