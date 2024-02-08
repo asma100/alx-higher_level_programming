@@ -1,11 +1,36 @@
 #!/usr/bin/python3
-"""
-Adds items to a JSON file, creating the file if it doesn't exist.
-"""
+
 
 import sys
-from 5-save_to_json_file import save_to_json_file  # Function to save a list to a JSON file
-from 6-load_from_json_file import load_from_json_file  # Function to load a list from a JSON file
+import json
+
+
+def save_to_json_file(my_obj, filename):
+    """
+    Saves an object to a text file as JSON.
+
+    Args:
+        my_obj: The object to serialize and save.
+        filename: The name of the file to save to.
+    """
+
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(my_obj, f)
+
+
+def load_from_json_file(filename):
+    """
+    Loads a JSON object from a file.
+
+    Args:
+        filename: The name of the file to load from.
+
+    Returns:
+        The loaded JSON object.
+    """
+
+    with open(filename, "r") as f:
+        return json.load(f)
 
 
 def add_items_to_file(items: list[str]) -> None:
@@ -14,9 +39,6 @@ def add_items_to_file(items: list[str]) -> None:
 
     Args:
         items: A list of items to add to the file.
-
-    Raises:
-        ValueError: If the loaded JSON data is invalid.
     """
 
     filename = "add_item.json"
@@ -24,6 +46,7 @@ def add_items_to_file(items: list[str]) -> None:
         my_list = load_from_json_file(filename)
     except FileNotFoundError:
         my_list = []
+
     my_list.extend(items)
     save_to_json_file(my_list, filename)
 
