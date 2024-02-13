@@ -99,3 +99,19 @@ class Rectangle(Base):
         """str"""
         return(f"[Rectangle] ({self.id}) {self.x}/{self.y}- {self.width}/{self.height}")
         
+    def update(self, *args):
+        """update values"""
+        if len(args) > 5:
+            raise ValueError("Too many arguments")
+
+        for i, arg in enumerate(args, 1):
+            if i == 1:
+                self.id = arg
+            elif i == 2:
+                self.width = arg
+            elif i == 3:
+                self.height = arg
+            elif i == 4:
+                self.x = arg
+            elif i == 5:
+                self.y = arg
