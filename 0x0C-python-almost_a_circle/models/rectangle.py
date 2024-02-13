@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module Rectangle"""
+0;276;0c"""module Rectangle"""
 from models.base import Base
 """import Base"""
 
@@ -99,19 +99,19 @@ class Rectangle(Base):
         """str"""
         return(f"[Rectangle] ({self.id}) {self.x}/{self.y}- {self.width}/{self.height}")
         
-    def update(self, *args):
+   def update(self, *args, **kwargs):
         """update values"""
-        if len(args) >= 1:
-            self.__id = args[0]
-        if len(args) >= 2:
-            self.int_validate("width", args[1], False)
-            self.__width = args[1]
-        if len(args) >= 3:
-            self.int_validate("height", args[2], False)
-            self.__height = args[2]
-        if len(args) >= 4:
-            self.int_validate("x", args[3], True)
-            self.__x = args[3]
-        if len(args) >= 5:
-            self.int_validate("y", args[4], True)
-            self.__y = args[4]
+        if not kwargs:
+            if len(args) > 5:
+                raise ValueError("Too many positional arguments")
+
+            for i, arg in enumerate(["id", "width", "height", "x", "y"]):
+                if i < len(args):
+                    self.int_validate(arg, args[i], arg in ("x", "y"))
+                    self.__setattr__(arg, args[i])
+        else:
+            for attr, value in kwargs.items():
+                if not hasattr(self, attr):
+                    raise TypeError(f"Invalid attribute name: {attr}")
+                self.int_validate(attr, value, attr in ("x", "y"))
+                self.__setattr__(attr, value)
