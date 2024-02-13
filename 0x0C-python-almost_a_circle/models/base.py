@@ -33,7 +33,7 @@ class Base:
 
             for obj in list_objs:
                 if not isinstance(obj, cls):
-                    raise TypeError("must contain only Base subclasses")
+                    raise TypeError("list_objs must contain only Base subclasses")
 
                 row = [getattr(obj, attr) for attr in ["id", "width", "height", "x", "y"]]
                 row.insert(0, cls.__name__)
