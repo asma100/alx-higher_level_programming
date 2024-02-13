@@ -78,6 +78,7 @@ class Rectangle(Base):
         """Setter for the y-coordinate attribute."""
         self.int_validate("y", value, True)
         self.__y = value
+
     def area(self):
         """area"""
         return self.__width * self.__height
