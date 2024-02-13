@@ -35,7 +35,10 @@ class Base:
                 if not isinstance(obj, cls):
                     raise TypeError("must contain only Base subclasses")
 
-                row = [getattr(obj, attr) for attr in ["id", "width", "height", "x", "y"]]
+                row = [
+                    getattr(obj, attr)
+                    for attr in ["id", "width", "height", "x", "y"]
+                ]
                 row.insert(0, cls.__name__)
 
                 writer.writerow(row)
