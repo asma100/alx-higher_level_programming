@@ -4,10 +4,10 @@ from models.base import Base
 """import Base"""
 
 
-class Rectangle:
+class Rectangle(Base):
     """A rectangle with a width, height, x-coordinate, and y-coordinate."""
 
-    def __init__(self, width, height, x=0, y=0):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initializes a new Rectangle object.
 
@@ -18,6 +18,7 @@ class Rectangle:
         self.int_validate("x", x, True)
         self.int_validate("y", y, True)
 
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
