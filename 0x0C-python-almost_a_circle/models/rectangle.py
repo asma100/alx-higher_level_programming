@@ -101,17 +101,17 @@ class Rectangle(Base):
         
     def update(self, *args):
         """update values"""
-        if len(args) > 5:
-            raise ValueError("Too many arguments")
-
-        for i, arg in enumerate(args, 1):
-            if i == 1:
-                self.id = arg
-            elif i == 2:
-                self.width = arg
-            elif i == 3:
-                self.height = arg
-            elif i == 4:
-                self.x = arg
-            elif i == 5:
-                self.y = arg
+        if len(args) >= 1:
+            self.__id = args[0]
+        if len(args) >= 2:
+            self.int_validate("width", args[1], False)
+            self.__width = args[1]
+        if len(args) >= 3:
+            self.int_validate("height", args[2], False)
+            self.__height = args[2]
+        if len(args) >= 4:
+            self.int_validate("x", args[3], True)
+            self.__x = args[3]
+        if len(args) >= 5:
+            self.int_validate("y", args[4], True)
+            self.__y = args[4]
