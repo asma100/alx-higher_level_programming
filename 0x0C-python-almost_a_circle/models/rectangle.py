@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module Rectangle"""
+11;rgb:0000/0000/0000"""module Rectangle"""
 from models.base import Base
 """import Base"""
 
@@ -84,7 +84,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """display rectangle"""  
+        """display rectangle"""
         for i in range(self.height):
             for j in range(self.width):
                 print("#", end="")
