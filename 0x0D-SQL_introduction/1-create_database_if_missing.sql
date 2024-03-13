@@ -1,2 +1,2 @@
---list
-CREATE DATABASE hbtn_0c_0;
+-- Creates
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
