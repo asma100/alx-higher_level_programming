@@ -1,1 +1,2 @@
+__show
 SHOW DATABASES;
