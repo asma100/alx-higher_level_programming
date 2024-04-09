@@ -2,11 +2,7 @@
 const BSquare = require('./5-square');
 
 class Square extends BSquare {
-  constructor(size) {
-      super(size);
-  }
-
-  charPrint(c) {
+  charPrint (c) {
     if (c === undefined) {
       this.print();
     }
@@ -19,7 +15,7 @@ class Square extends BSquare {
         console.log(row);
       }
     }
-  }
+}
 }
 
 module.exports = Square;
