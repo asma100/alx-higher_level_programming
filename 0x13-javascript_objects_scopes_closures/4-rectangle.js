@@ -8,20 +8,21 @@ class Rectangle {
     this.height = h;
   }
   print () {
-      for (let i = 0; i < this.height; i++) {
-        let row = '';
-        for (let j = 0; j < this.width; j++) {
-            row += 'X';
-          }
-        console.log(row);
+    for (let i = 0; i < this.height; i++) {
+      let row = '';
+      for (let j = 0; j < this.width; j++) {
+        row += 'X';
       }
+      console.log(row);
+    }
   }
+
   rotate(){
     let x = this.height;
     this.height = this.width;
     this.width = x;
-
   }
+  
   double(){
     this.height = 2 * this.height;
     this.width = 2 * this.width;
