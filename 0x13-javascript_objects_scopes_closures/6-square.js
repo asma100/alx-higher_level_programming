@@ -5,8 +5,7 @@ class Square extends BSquare {
   charPrint (c) {
     if (c === undefined) {
       this.print();
-    }
-    else {
+    } else {
       for (let i = 0; i < this.size; i++) {
         let row = '';
         for (let j = 0; j < this.size; j++) {
