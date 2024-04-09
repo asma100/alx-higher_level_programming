@@ -3,7 +3,7 @@
     constructor (w, h) {
     this.width = w;
     this.height = h;
-    if (width <= 0 || height <= 0) {
+    if (w <= 0 || h <= 0) {
       this.width = undefined;
       this.height = undefined;
     }
