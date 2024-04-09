@@ -9,4 +9,3 @@ if (process.argv.length > 2)
 else {
  console.log('No argument');
 }
-//just checking
