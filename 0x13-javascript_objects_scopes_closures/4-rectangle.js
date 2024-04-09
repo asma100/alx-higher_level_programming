@@ -7,7 +7,7 @@ class Rectangle {
     this.width = w;
     this.height = h;
   }
-  
+
   print () {
     for (let i = 0; i < this.height; i++) {
       let row = '';
@@ -23,6 +23,7 @@ class Rectangle {
     this.height = this.width;
     this.width = x;
   }
+  
   double () {
     this.height = 2 * this.height;
     this.width = 2 * this.width;
