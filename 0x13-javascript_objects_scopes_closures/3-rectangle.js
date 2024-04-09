@@ -8,8 +8,8 @@ class Rectangle {
       this.height = h;
     }
     print(){
-      for (let i = 1; i <= h; i++) {
-          for (let j = 1; i <= w; j++)
+      for (let i = 1; i <= height; i++) {
+          for (let j = 1; i <= width; j++)
             console.log(x); 
           }
     }
