@@ -1,31 +1,23 @@
 #!/usr/bin/python3
-"""taske select"""
+""" Script that lists all states from the database hbtn_0e_0_usa """
+import MySQLdb
+from sys import argv
 
-import mysql.connector
-import sys
+# The code should not be executed when imported
+if __name__ == '__main__':
 
-def select_states(username, password, db_name):
-    try:
-        db = mysql.connector.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            password=password,
-            database=db_name
-        )
-        cursor = db.cursor()
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        states = cursor.fetchall()
-        for state in states:
-            print(state)
-        cursor.close()
-        db.close()
-    except mysql.connector.Error as e:
-        print("MySQL Error {}: {}".format(e.errno, e.msg))
-        sys.exit(1)
+    # make a connection to the database
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
-        sys.exit(1)
-    select_states(sys.argv[1], sys.argv[2], sys.argv[3])
+    # It gives us the ability to have multiple seperate working environments
+    # through the same connection to the database.
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
+    # Clean up process
+    cur.close()
+    db.close()
