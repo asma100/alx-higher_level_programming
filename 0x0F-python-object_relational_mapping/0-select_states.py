@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""taske select"""
+
 import mysql.connector
 import sys
 
