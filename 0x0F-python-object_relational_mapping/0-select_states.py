@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """the first task"""
 import MySQLdb
+import sys
 
-if __name__ == '__main__':
+def select_states(username, password, db_name):
 
     conn = MySQLdb.connect(host="localhost", port=3306, user="root", passwd="root", db="my_db", charset="utf8")
     cur = conn.cursor()
@@ -12,3 +13,5 @@ if __name__ == '__main__':
         print(row)
     cur.close()
     conn.close()
+if __name__ == "__main__":
+    select_states(sys.argv[1], sys.argv[2], sys.argv[3])
