@@ -29,4 +29,4 @@ def select_states(username, password, my_db, state_name):
 
 
 if __name__ == "__main__":
-    select_states(sys.argv[1], sys.argv[2], sys.argv[3],sys.argv[4])
+    select_states(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
