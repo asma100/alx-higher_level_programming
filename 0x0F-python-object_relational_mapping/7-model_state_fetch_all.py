@@ -8,10 +8,11 @@ import sys
 
 def list_objects(username, password, db_name):
     engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{db_name}', pool_pre_ping=True)
-    with Session(engine) as session:
-        objects = session.query(State).all()
-        for obj in objects:
-            print(obj.id, obj.name)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
 
 
 if __name__ == "__main__":
