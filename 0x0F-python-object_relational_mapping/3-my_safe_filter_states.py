@@ -15,7 +15,7 @@ def select_states(username, password, my_db, searched):
     cur = conn.cursor()
     escaped_state_name = '%{}%'.format(conn.escape_string(searched))
     sql_query = ("SELECT * FROM states "
-                 "WHERE BINARY name LIKE %s ORDER BY id ASC").format(searched)
+                 "WHERE BINARY name LIKE %s ORDER BY id ASC")
     cur.execute(sql_query, (escaped_state_name,))
     query_rows = cur.fetchall()
     for row in query_rows:
