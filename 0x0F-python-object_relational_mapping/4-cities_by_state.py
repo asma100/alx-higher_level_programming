@@ -13,7 +13,7 @@ def select_states(username, password, my_db):
                            db=my_db,
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM cities  ORDER BY id ASC")
+    cur.execute("SELECT * FROM cities  ORDER BY cities.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
