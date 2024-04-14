@@ -22,8 +22,8 @@ def select_states(username, password, my_db, state_name):
     """
     cur.execute(sql_query, (state_name,))
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    cities = ", ".join(row[0] for row in query_rows)
+    print(cities)
     cur.close()
     conn.close()
 
