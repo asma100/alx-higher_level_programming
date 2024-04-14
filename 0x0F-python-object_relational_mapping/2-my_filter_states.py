@@ -13,7 +13,7 @@ def select_states(username, password, my_db, searched):
                            db=my_db,
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (searched,))
+    sql_query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(searched)
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
