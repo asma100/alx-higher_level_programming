@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""tasks"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+
 
 def delete_states_with_a(username, password, db_name):
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
@@ -15,6 +17,7 @@ def delete_states_with_a(username, password, db_name):
         session.delete(state)
     session.commit()
     session.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
