@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-"""task"""
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-from model_state import Base, State
+"""tasks """
 import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
 
-def print_first_state(username, password, db_name,):
+def add_state(username, password, db_name):
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(username, password, db_name),
-                           pool_pre_ping=True)
+                           .format(username, password, db_name), echo=False)
+    Base.metadata.bind = engine
     Session = sessionmaker(bind=engine)
     session = Session()
-
     new_state = State(name="Louisiana")
-
     session.add(new_state)
     session.commit()
+    print(new_state.id)
     session.close()
 
+
 if __name__ == "__main__":
-    print_first_state(sys.argv[1], sys.argv[2], sys.argv[3])
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
+    username, password, db_name = sys.argv[1:]
+    add_state(username, password, db_name)
