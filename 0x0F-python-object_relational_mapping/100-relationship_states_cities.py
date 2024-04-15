@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """task"""
-from sqlalchemy.orm import relationship
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from relationship_state import Base, State, City
+from relationship_state import State
+from relationship_city import Base, City
 
 
 def create_california(username, password, db_name):
