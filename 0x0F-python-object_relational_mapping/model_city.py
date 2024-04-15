@@ -9,11 +9,11 @@ Base = declarative_base()
 
 class City(Base):
     """ class  link  database"""
-    __tablename__ = 'City'
+    __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer , foreign_key = states.id)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
 if __name__ == "__main__":
     from sqlalchemy import create_engine
