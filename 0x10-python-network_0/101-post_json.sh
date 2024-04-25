@@ -1,3 +1,3 @@
 #!/bin/bash
 #task101
-curl -s -o /dev/null -w "%{http_code}" "$1"
+curl -sX POST $1 -H "Content-Type: application/json" -d @$2 -L
