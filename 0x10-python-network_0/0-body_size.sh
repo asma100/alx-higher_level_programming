@@ -1,4 +1,4 @@
 #!/bin/bash
 #task0
-curl -sI "$1" | awk '/Content-Length/ {print $2}'
+curl -Is "$1" | grep -w 'Content-Length' | cut -f2 -d' '
 
