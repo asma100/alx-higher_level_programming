@@ -1,3 +1,3 @@
 #!/bin/bash
 #task2
-curl  -sX  $1
+curl  -sLX  $1
