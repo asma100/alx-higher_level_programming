@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""task1"""
+"""task 1"""
+
+
 import urllib.request
 import sys
-url = sys.argv[1]
-with urllib.request.urlopen(url) as response:
-  h = response.info() 
-  request_id = h.get('X-Request-Id')
+if __name__ == "__main__":
+  url = sys.argv[1]
+  with urllib.request.urlopen(url) as response:
+    h = response.info() 
+    request_id = h.get('X-Request-Id')
   
-  if request_id:
-    print(request_id)
+    if request_id:
+      print(request_id)
