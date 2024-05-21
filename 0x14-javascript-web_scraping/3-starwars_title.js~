@@ -1,0 +1,12 @@
+#!/usr/bin/node
+const request = require('request');
+
+function getMovieTitle (ID) {
+  const url = `https://swapi-api.alx-tools.com/api/films/${ID}`;
+  request.get(url, (body) => {
+    JSON.parse(body);
+    console.log(body.title);
+  });
+}
+const ID = process.argv[2];
+getMovieTitle(ID);
