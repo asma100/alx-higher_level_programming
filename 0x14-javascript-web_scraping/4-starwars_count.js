@@ -1,0 +1,26 @@
+#!/usr/bin/node
+const request = require('request');
+
+function countWedgeAppearances (url) {
+  request.get(url, (error, response, body) => {
+    if (error) {
+      console.error('Error fetching films:', error.message);
+      return;
+    }
+    const films = JSON.parse(body);
+    const wedgeUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
+    let Count = 0;
+    for (const film of films.results) {
+      for (const characterUrl of film.characters) {
+        if (characterUrl === wedgeUrl) {
+          Count++;
+          break;
+        }
+      }
+    }
+
+    console.log(`${Count}`);
+  });
+}
+const filmsUrl = 'https://swapi-api.alx-tools.com/api/films/';
+countWedgeAppearances(filmsUrl);
