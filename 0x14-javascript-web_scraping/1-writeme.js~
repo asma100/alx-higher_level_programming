@@ -1,0 +1,24 @@
+#!/usr/bin/node
+const fs = require('fs');
+
+// Function to write a string to a file
+function writeStringToFile (filePath, content) {
+  if (!filePath || !content) {
+    console.error('Error: Please provide a file path and content to write.');
+    return; // Exit function if missing arguments
+  }
+
+  fs.writeFile(filePath, content, 'utf-8', (err) => {
+    if (err) {
+      console.error(`Error writing to file: ${err.message}`);
+      return; // Exit callback on error
+    }
+
+    console.log(`Successfully wrote content to '${filePath}'.`);
+  });
+}
+const filePath = process.argv[2];
+const content = process.argv[3];
+
+// Call the writeStringToFile function
+writeStringToFile(filePath, content);
