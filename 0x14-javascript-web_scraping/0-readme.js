@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 // Function to read and print file content
-function readFile(filePath) {
+function readFile (filePath) {
   if (!filePath) {
     console.error('Error: Please provide a file path as the first argument.');
     return; // Exit function if no path is provided
